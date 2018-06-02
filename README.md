@@ -25,11 +25,6 @@ Docker deploying Nginx MySQL PHP7 in one key, support full feature functions.
 4. Start docker containers:
     ```
     $ cd dnmp
-    $ docker-compose up
-    ```
-    or
-    ```
-    $ cd dnmp
     ./start.sh
     ```
     or
@@ -37,7 +32,17 @@ Docker deploying Nginx MySQL PHP7 in one key, support full feature functions.
     $ cd dnmp
     ./up.sh
     ```
+    or
+    ```
+    $ cd dnmp
+    $ docker-compose up
+    ```
     You may need use `sudo` before this command in Linux.
+    
+    It is recommended to use shell scripts, which automatically create index.php files in the www/localhost directory.
+    
+    Otherwise you'll need to create your own PHP file in the localhost directory.
+    
 5. Go to your browser and type `localhost`, you will see:
 
 ![Demo Image](./snapshot.png)
