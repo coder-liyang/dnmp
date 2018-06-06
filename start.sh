@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DIRECTORY=www
+DIRECTORY=$(cd `dirname $0`; pwd)/www
 if [ "`ls -A $DIRECTORY`" = ".gitignore" ];
 then
 cat>$DIRECTORY/index.php<<EOF
