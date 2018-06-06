@@ -30,7 +30,7 @@ mysql:
     - "3306:3306"
   volumes:
     - ./conf/mysql/my.cnf:/etc/mysql/my.cnf:ro
-    - ./mysql/:/var/lib/mysql/:rw
+    - ./data/mysql/:/var/lib/mysql/:rw
     - ./log/mysql/:/var/log/mysql/:rw
   environment:
     MYSQL_ROOT_PASSWORD: "123456"
