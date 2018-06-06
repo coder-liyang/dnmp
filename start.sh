@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-DIRECTORY=www/localhost
+DIRECTORY=www
 if [ "`ls -A $DIRECTORY`" = ".gitignore" ];
 then
-cat>www/localhost/index.php<<EOF
+cat>www/index.php<<EOF
 <?php
 phpinfo();
 EOF
