@@ -3,7 +3,7 @@
 DIRECTORY=www
 if [ "`ls -A $DIRECTORY`" = ".gitignore" ];
 then
-cat>www/index.php<<EOF
+cat>$DIRECTORY/index.php<<EOF
 <?php
 phpinfo();
 EOF
