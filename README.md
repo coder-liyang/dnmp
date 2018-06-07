@@ -9,7 +9,7 @@ Docker deploying Nginx MySQL PHP7 in one key, support full feature functions.
 3. Support Multiple domains.
 4. Support HTTPS and HTTP/2.
 5. PHP source located in host.
-6. MySQL data directory in host.
+6. MySQL/Redis data directory in host.
 7. All conf files located in host.
 8. All log files located in host.
 9. Built-in PHP extensions install commands.
@@ -39,15 +39,15 @@ Docker deploying Nginx MySQL PHP7 in one key, support full feature functions.
     ```
     You may need use `sudo` before this command in Linux.
     
-    It is recommended to use shell scripts, which automatically create index.php files in the www/localhost directory.
+    It is recommended to use shell scripts, which automatically create index.php files in the www directory.
     
-    Otherwise you'll need to create your own PHP file in the localhost directory.
+    Otherwise you'll need to create your own PHP file in the www directory.
     
 5. Go to your browser and type `localhost`, you will see:
 
 ![Demo Image](./snapshot.png)
 
-The index file is located in `./www/site1/`.
+The index file is located in `./www/`.
 
 ### Other PHP version?
 Default, we start LATEST PHP version by using:
@@ -65,7 +65,7 @@ We need not change any other files, such as nginx config file or php.ini, everyt
 
 ### HTTPS and HTTP/2
 Default demo include 2 sites:
-* http://www.site1.com (same with http://localhost)
+* http://www.site1.com
 * https://www.site2.com
 
 To preview them, add 2 lines to your hosts file (at `/etc/hosts` on Linux and `C:\Windows\System32\drivers\etc\hosts` on Windows):
