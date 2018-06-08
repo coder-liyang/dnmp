@@ -1,6 +1,6 @@
 FROM php:5.6-fpm
 
-COPY ./sources.list.jessie /etc/apt/sources.list
+#COPY ./sources.list.jessie /etc/apt/sources.list
 
 # Extensions: ctype, dom, fileinfo, ftp, hash, iconv, json, pdo, pdo_sqlite, session,
 # tokenizer, simplexml, xml, xmlreader, xmlwriter and phar are bundled and compiled into
@@ -44,7 +44,7 @@ RUN apt-get update \
     && docker-php-ext-install sysvmsg \
     && docker-php-ext-install sysvsem \
     && docker-php-ext-install sysvshm \
-    && docker-php-ext-install opcache
+    && docker-php-ext-install opcache \
     #&& docker-php-ext-install pdo_firebird \
     #&& docker-php-ext-install pdo_dblib \
     #&& docker-php-ext-install pdo_oci \
@@ -98,27 +98,4 @@ RUN apt-get update \
     #&& docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu \
     #&& docker-php-ext-install ldap \
 
-# Composer
-#RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ --filename=composer \
-
-# Install extension using pecl
-# Notice: if pecl install get error
-#    `No releases available for package "pecl.php.net/xxx"`
-# or
-#    `Package "xxx" does not have REST xml available`
-# Please turn on proxy (The proxy IP may be docker host IP or others):
-RUN pear config-set http_proxy http://10.0.75.1:1080
-
-RUN pecl install redis-3.1.4 \
-    && docker-php-ext-enable redis \
-    && :\
-    && pecl install xdebug-2.5.5 \
-    && docker-php-ext-enable xdebug \
-    && :\
-    && apt-get install -y libmagickwand-dev \
-    && pecl install imagick-3.4.3 \
-    && docker-php-ext-enable imagick \
-    && :\
-    && apt-get install -y libmemcached-dev zlib1g-dev \
-    && pecl install memcached-2.2.0 \
-    && docker-php-ext-enable memcached
+    && rm -rf /var/lib/apt/lists/*
