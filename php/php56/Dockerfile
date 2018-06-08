@@ -97,7 +97,5 @@ RUN apt-get update \
     #&& apt-get install -y libldap2-dev \
     #&& docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu \
     #&& docker-php-ext-install ldap \
-
+    && pecl install redis \
     && rm -rf /var/lib/apt/lists/*
-
-COPY ./redis.so /usr/local/lib/php/extensions/no-debug-non-zts-20131226/redis.so
