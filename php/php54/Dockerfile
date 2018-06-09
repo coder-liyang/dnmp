@@ -99,18 +99,7 @@ RUN apt-get update \
     #&& docker-php-ext-install ldap \
     && rm -rf /var/lib/apt/lists/*
 
-# Install extension from source
-#
-# However, we can also use pecl to install pecl extensions:
-#   && pecl install zendopcache-7.0.5 \
-#   && docker-php-ext-enable opcache \
-# Here is only an example showing how to install an extension from source.
-COPY ./zendopcache-7.0.5.tgz /tmp/
-RUN cd /tmp/ \
-        && tar -xf zendopcache-7.0.5.tgz \
-		&& rm zendopcache-7.0.5.tgz \
-        && ( cd zendopcache-7.0.5 && phpize && ./configure && make && make install ) \
-        && rm -r zendopcache-7.0.5 \
-        && docker-php-ext-enable opcache
-
 COPY ./redis.so /usr/local/lib/php/extensions/no-debug-non-zts-20100525/redis.so
+COPY ./opcache.so /usr/local/lib/php/extensions/no-debug-non-zts-20100525/opcache.so
+
+RUN docker-php-ext-enable opcache
