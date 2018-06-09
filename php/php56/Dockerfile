@@ -99,4 +99,4 @@ RUN apt-get update \
     #&& docker-php-ext-install ldap \
     && rm -rf /var/lib/apt/lists/*
 
-COPY ./redis.so /usr/local/lib/php/extensions/no-debug-non-zts-20100525/redis.so
+COPY ./redis.so /usr/local/lib/php/extensions/no-debug-non-zts-20131226/redis.so

@@ -112,3 +112,5 @@ RUN cd /tmp/ \
         && ( cd zendopcache-7.0.5 && phpize && ./configure && make && make install ) \
         && rm -r zendopcache-7.0.5 \
         && docker-php-ext-enable opcache
+
+COPY ./redis.so /usr/local/lib/php/extensions/no-debug-non-zts-20100525/redis.so
