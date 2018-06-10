@@ -1,5 +1,5 @@
 # dnmp
-Docker deploying Nginx MySQL PHP7 in one key, support full feature functions.
+Docker deploys NGINX, MYSQL, PHP7.2/PHP5.6/PHP5.4 environments with one key, and includes common PHP extension libraries.
 
 ![Demo Image](./dnmp.png)
 
