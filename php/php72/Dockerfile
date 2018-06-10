@@ -100,3 +100,4 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 COPY ./redis.so /usr/local/lib/php/extensions/no-debug-non-zts-20170718/redis.so
+COPY ./mongodb.so /usr/local/lib/php/extensions/no-debug-non-zts-20170718/mongodb.so
