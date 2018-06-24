@@ -1,0 +1,8 @@
+# Created by .ignore support plugin (hsz.mobi)
+*
+!.gitignore
+!certs
+!certs/*
+!localhost.conf
+!site1.conf
+!site2.conf
