@@ -23,6 +23,7 @@ php72:
   links:
     - mysql:mysql
     - redis:redis
+    - rabbitmq:rabbitmq
 
 mysql:
   image: mysql:5.7.22
@@ -41,3 +42,9 @@ redis:
     - "6379:6379"
   volumes:
     - ./data/redis/:/data/:rw
+
+rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "15672:15672"
+    container_name: rabbitmq

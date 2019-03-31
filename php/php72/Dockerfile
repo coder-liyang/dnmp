@@ -101,3 +101,4 @@ RUN apt-get update \
 
 COPY ./redis.so /usr/local/lib/php/extensions/no-debug-non-zts-20170718/redis.so
 COPY ./mongodb.so /usr/local/lib/php/extensions/no-debug-non-zts-20170718/mongodb.so
+COPY ./swoole.so /usr/local/lib/php/extensions/no-debug-non-zts-20170718/swoole.so
