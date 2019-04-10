@@ -9,7 +9,8 @@ nginx:
     - ./conf/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
     - ./log/nginx/:/var/log/nginx/:rw
   links:
-    - php72:fpm
+    - php72:dnmp_php
+  container_name: dnmp_nginx
 
 php72:
   build: ./php/php72/
@@ -21,9 +22,10 @@ php72:
     - ./conf/php/php-fpm.d/www.conf:/usr/local/etc/php-fpm.d/www.conf:rw
     - ./log/php-fpm/:/var/log/php-fpm/:rw
   links:
-    - mysql:mysql
-    - redis:redis
-    - rabbitmq:rabbitmq
+    - mysql:dnmp_mysql
+    - redis:dnmp_redis
+    - rabbitmq:dnmp_rabbitmq
+  container_name: dnmp_php72
 
 mysql:
   image: mysql:5.7.22
@@ -35,6 +37,7 @@ mysql:
     - ./log/mysql/:/var/log/mysql/:rw
   environment:
     MYSQL_ROOT_PASSWORD: "123456"
+  container_name: dnmp_mysql
 
 redis:
   image: redis:4.0.9
@@ -42,9 +45,10 @@ redis:
     - "6379:6379"
   volumes:
     - ./data/redis/:/data/:rw
+  container_name: dnmp_redis
 
 rabbitmq:
-    image: rabbitmq:3-management
-    ports:
-      - "15672:15672"
-    container_name: rabbitmq
+  image: rabbitmq:3-management
+  ports:
+    - "15672:15672"
+  container_name: dnmp_rabbitmq
