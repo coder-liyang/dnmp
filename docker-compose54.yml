@@ -21,8 +21,8 @@ services:
       - "9000"
     volumes:
       - ./www/:/var/www/html/:rw
-      - ./conf/php/php.ini:/usr/local/etc/php/php.ini:ro
-      - ./conf/php/php-fpm.d/www.conf:/usr/local/etc/php-fpm.d/www.conf:rw
+      - ./php/php54/php.ini:/usr/local/etc/php/php.ini:ro
+      - ./php/php54/php-fpm.d/www.conf:/usr/local/etc/php-fpm.d/www.conf:rw
       - ./log/php-fpm/:/var/log/php-fpm/:rw
     container_name: dnmp_php
     networks: 

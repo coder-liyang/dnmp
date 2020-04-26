@@ -36,6 +36,7 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install zip \
     && docker-php-ext-install pcntl \
     && docker-php-ext-install pdo_mysql \
+    && docker-php-ext-install mysql \
     && docker-php-ext-install mysqli \
     && docker-php-ext-install mbstring \
     && docker-php-ext-install exif \
@@ -51,4 +52,4 @@ RUN apt-get update && apt-get install -y \
 
 #    && rm -rf /var/lib/apt/lists/*
 
-#COPY ./redis.so /usr/local/lib/php/extensions/no-debug-non-zts-20131226/redis.so
+COPY ./redis.so /usr/local/lib/php/extensions/no-debug-non-zts-20131226/redis.so
