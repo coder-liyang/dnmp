@@ -20,7 +20,7 @@ Docker deploys NGINX, MYSQL, PHP7.2/PHP5.6/PHP5.4 environments with one key, and
 1. Install `git`, `docker` and `docker-compose`;
 2. Clone project:
     ```
-    $ git clone git@github.com:kaopur/dnmp.git
+    $ git clone git@github.com:coder-liyang/dnmp.git
     ```
 4. Start docker containers:
     ```
